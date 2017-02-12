@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Dagger2Demo</string>
+
+    <string name="empty_data">输入的账号密码不能为空</string>
+
+    <string name="login_success">恭喜你登录成功</string>
+
+    <string name="login_failed">登录失败</string>
+
+</resources>
