@@ -1,5 +1,9 @@
 package com.github.dagger2demo;
 
+import com.github.dagger2demo.price_strategy.LargeCustomerStrategy;
+import com.github.dagger2demo.price_strategy.Price;
+import com.github.dagger2demo.price_strategy.Strategy;
+
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -17,6 +21,34 @@ public class ExampleUnitTest {
     @Test
     public void addition_isCorrect() throws Exception {
         //assertEquals(4, 2 + 2);
+
+
+        Strategy strategy = new LargeCustomerStrategy();
+        Price price = new Price(strategy);
+        double quote = price.quote(1000000);
+
+        System.out.println(""+quote);
+
+        Calculation calculation = new Calculation(new ConcreteStateA(10));
+
+        int result = calculation.getResult();
+
+        System.out.println("**" + result);
+
+        calculation.calculation();
+
+        result = calculation.getResult();
+
+        System.out.println("**" + result);
+
+        calculation.calculation();
+
+        result = calculation.getResult();
+
+        System.out.println("**" + result);
+
+        calculation.calculation();
+
 
         List<String> a = new ArrayList<>();
 
@@ -42,6 +74,7 @@ public class ExampleUnitTest {
         while (i.hasNext()) {
             System.out.println("--" + i.next());
         }
+
 
 //        for (String temp : a) {
 //            if (temp.equals("2")) {

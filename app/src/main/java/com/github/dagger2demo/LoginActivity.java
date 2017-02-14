@@ -33,6 +33,7 @@ public class LoginActivity extends AppCompatActivity implements ILoginView {
         mEtUsername = (EditText) findViewById(R.id.et_username);
         mEtPassword = (EditText) findViewById(R.id.et_password);
 
+
         DaggerLoginComponent.builder().loginModule(new LoginModule(this)).build().inject(this);
 
     }
